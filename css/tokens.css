@@ -1,0 +1,88 @@
+/* Design tokens — Frederick / Digital Marketer Portfolio
+   Dark premium theme, two accent pillars: Marketing (coral) + Systems & Automation (cyan-blue) */
+
+:root {
+  /* Surfaces */
+  --bg: #0a0a0f;
+  --surface: #14161f;
+  --surface-2: #1b1e29;
+  --surface-3: #23273500;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+
+  /* Text */
+  --text: #f5f5f7;
+  --text-muted: #94a3b8;
+  --text-faint: #5b6472;
+
+  /* Accents */
+  --marketing-1: #3b82f6;
+  --marketing-2: #22d3ee;
+  --systems-1: #3b82f6;
+  --systems-2: #22d3ee;
+
+  --marketing-gradient: linear-gradient(135deg, var(--marketing-1), var(--marketing-2));
+  --systems-gradient: linear-gradient(135deg, var(--systems-1), var(--systems-2));
+
+  --marketing-glow: rgba(59, 130, 246, 0.35);
+  --systems-glow: rgba(59, 130, 246, 0.35);
+
+  /* Type */
+  --font-heading: "Outfit", "Work Sans", system-ui, sans-serif;
+  --font-body: "Work Sans", system-ui, sans-serif;
+
+  --fs-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --fs-h1: clamp(2rem, 4vw, 3rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2rem);
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+
+  /* Spacing scale */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
+
+  /* Radii */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 0.84, 0.44, 1);
+  --dur-fast: 200ms;
+  --dur-med: 400ms;
+
+  /* Shadow */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --shadow-lift: 0 20px 45px rgba(0, 0, 0, 0.45);
+
+  /* Layout */
+  --max-width: 1240px;
+  --nav-height: 76px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    /* Tighter overall scale so mobile reads more like tablet — fixed
+       chrome (nav, section padding, card padding) was staying full-size
+       on a much narrower screen and felt oversized. */
+    --space-3: 20px;
+    --space-4: 22px;
+    --space-5: 36px;
+    --space-6: 40px;
+    --space-7: 56px;
+    --space-8: 64px;
+    --nav-height: 64px;
+
+    --fs-hero: clamp(2.1rem, 8vw, 2.75rem);
+    --fs-h1: clamp(1.75rem, 6vw, 2.25rem);
+    --fs-h2: clamp(1.35rem, 5vw, 1.6rem);
+  }
+}

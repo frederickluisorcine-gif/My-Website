@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frederick | Digital Marketer</title>
+<meta name="description" content="Frederick helps online coaches and creators gain more sales and revenue through strategic organic content, and builds the systems and automation that keep it running.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Icon sprite (inline, no external requests) -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-film" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 15h4M17 9h4M17 15h4"/>
+  </symbol>
+  <symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/><path d="M10 8.5l6 3.5-6 3.5v-7z" fill="currentColor" stroke="none"/>
+  </symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+  </symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M21 3L11 13M21 3l-7 18-4-8-8-4 19-6z"/>
+  </symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 1l4 4-4 4M3 11V9a4 4 0 014-4h14M7 23l-4-4 4-4M21 13v2a4 4 0 01-4 4H3"/>
+  </symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
+  </symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 2h6v3H9zM8 10h8M8 14h8M8 18h5"/>
+  </symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/>
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>
+  </symbol>
+  <symbol id="i-music" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/>
+  </symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 9l6 6 6-6"/>
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 6h18M3 12h18M3 18h18"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 6L6 18M6 6l12 12"/>
+  </symbol>
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14M13 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav">
+  <div class="container">
+    <a href="#home" class="brand">Frederick</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+      <a href="#faq">Q&amp;A</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Let's Talk</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <svg><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="home">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="eyebrow"><span class="dot"></span>Digital Marketer · Video-Led Growth Systems</span>
+      <h1 data-reveal>Turning content into <span class="gradient-text">revenue</span> for coaches &amp; creators.</h1>
+      <p class="subhead" data-reveal>I help online coaches and creators gain more sales through strategic organic content, then build the <span style="color:var(--text)">systems and automation</span> that keep it running without you.</p>
+      <div class="hero-ctas" data-reveal>
+        <a href="#contact" class="btn btn-primary">Let's Talk <svg><use href="#i-arrow"/></svg></a>
+        <a href="#portfolio" class="btn btn-ghost">See My Work</a>
+      </div>
+      <div class="stat-row" data-reveal>
+        <div class="stat-pill">
+          <div class="stat-num" data-count="10.5" data-suffix="M+">0</div>
+          <div class="stat-label">Organic Post Views</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num" data-count="7.9" data-suffix="K+">0</div>
+          <div class="stat-label">Followers Grown</div>
+        </div>
+        <div class="stat-pill">
+          <div class="stat-num-static">2024</div>
+          <div class="stat-label">Client Partner Since</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="dot"></span>About</span>
+        <h2>The person behind the work</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-photo-wrap" data-reveal>
+          <img src="assets/images/about-photo.png" alt="Portrait of Frederick" loading="lazy">
+        </div>
+        <div class="about-copy" data-reveal>
+          <p>I'm <strong>Frederick</strong>, a digital marketer and video editor based in the Philippines. I help online coaches and creators grow through strategic organic content and I'm building the systems and automation layer that makes that growth repeatable, not just a one-off video.</p>
+          <p>I'm also an affiliate marketer myself. I run tech-niche affiliate content on TikTok and Shopee, and my TikTok channel alone has grown past 10 million organic views. Selling directly to an audience like that, day in and day out, is exactly the hands-on experience I bring into the marketing systems I build for clients.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES (BENTO) ============ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="dot"></span>Services</span>
+        <h2>What I do</h2>
+        <p>Two things I'm obsessed with: getting you seen, and making sure growth doesn't rely on you doing everything manually.</p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Pillar: Marketing -->
+        <div class="bento-card pillar marketing" data-reveal>
+          <span class="pillar-label">Pillar 01</span>
+          <div>
+            <h3>Marketing<span style="color:var(--text-muted); font-weight:400;">: Inbound &amp; Outbound</span></h3>
+            <p>Organic content and outreach systems that get you in front of the right people and convert.</p>
+          </div>
+        </div>
+
+        <div class="bento-card sub marketing-tile span-2" data-reveal>
+          <span class="icon"><svg><use href="#i-film"/></svg></span>
+          <h3>Short-Form Video Editing</h3>
+          <p>Scroll-stopping edits for TikTok, Reels &amp; Shorts built to hold attention and drive action.</p>
+        </div>
+        <div class="bento-card sub marketing-tile span-2" data-reveal>
+          <span class="icon"><svg><use href="#i-play"/></svg></span>
+          <h3>VSL Production</h3>
+          <p>Video sales letters that walk cold traffic through to a buying decision.</p>
+        </div>
+        <div class="bento-card sub marketing-tile span-2" data-reveal>
+          <span class="icon"><svg><use href="#i-layout"/></svg></span>
+          <h3>Thumbnails &amp; Carousels</h3>
+          <p>Scroll-stopping thumbnail and carousel design for every post you publish.</p>
+        </div>
+        <div class="bento-card sub marketing-tile span-2" data-reveal>
+          <span class="icon"><svg><use href="#i-send"/></svg></span>
+          <h3>Outbound Outreach Systems</h3>
+          <p>DM and Upwork pitch systems that open real conversations with the right clients.</p>
+        </div>
+        <div class="bento-card sub marketing-tile span-4" data-reveal>
+          <span class="icon"><svg><use href="#i-repeat"/></svg></span>
+          <h3>Content Retainers</h3>
+          <p>A bundled, ongoing editing + design partnership so your content never stops.</p>
+        </div>
+
+        <!-- Pillar: Systems & Automation -->
+        <div class="bento-card pillar systems" data-reveal>
+          <span class="pillar-label">Pillar 02</span>
+          <div>
+            <h3>Systems <span style="color:var(--text-muted); font-weight:400;">&amp; Automation</span></h3>
+            <p>The behind-the-scenes build that turns one-off wins into a repeatable, self-running process.</p>
+          </div>
+        </div>
+
+        <div class="bento-card sub systems-tile span-2" data-reveal>
+          <span class="icon"><svg><use href="#i-cpu"/></svg></span>
+          <h3>Agentic Workflow Builds</h3>
+          <p>Claude-powered agents that handle research, drafting, and repetitive busywork for you.</p>
+        </div>
+        <div class="bento-card sub systems-tile span-2" data-reveal>
+          <span class="icon"><svg><use href="#i-clipboard"/></svg></span>
+          <h3>Process Documentation &amp; SOPs</h3>
+          <p>Clear systems so your content and outreach run the same way every time, with or without you.</p>
+        </div>
+        <div class="bento-card sub systems-tile span-4" data-reveal>
+          <span class="icon"><svg><use href="#i-spark"/></svg></span>
+          <h3>AI-Assisted Content Systems</h3>
+          <p>Tooling that speeds up scripting, editing, and publishing without losing your voice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="dot"></span>Portfolio</span>
+        <h2>Recent work</h2>
+        <p>A look at thumbnail &amp; carousel design, short-form edits, and VSL work I've shipped.</p>
+      </div>
+
+      <div class="filter-row" data-reveal role="tablist" aria-label="Filter portfolio by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="video" role="tab" aria-selected="false">Short-Form Video</button>
+        <button class="filter-btn" data-filter="design" role="tab" aria-selected="false">Thumbnails &amp; Carousels</button>
+        <button class="filter-btn" data-filter="vsl" role="tab" aria-selected="false">VSL</button>
+      </div>
+
+      <div class="portfolio-grid" id="portfolioGrid" data-reveal>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-01.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-01.jpg" alt="Short-form thumbnail design sample 1" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Scroll-Stopper 01</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-02.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-02.jpg" alt="Short-form thumbnail design sample 2" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Scroll-Stopper 02</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-03.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-03.jpg" alt="Short-form thumbnail design sample, Reel cover 4" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Reel Cover 04</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-04.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-04.jpg" alt="Short-form thumbnail design sample, Reel cover 8" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Reel Cover 08</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-05.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-05.jpg" alt="Short-form thumbnail design sample, Reel cover 1" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Reel Cover 01</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-06.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-06.jpg" alt="Short-form thumbnail design sample 6" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Scroll-Stopper 06</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-07.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-07.jpg" alt="Short-form thumbnail design sample 1" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Scroll-Stopper 07</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-08.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-08.jpg" alt="Short-form thumbnail design sample 15" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Scroll-Stopper 08</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-09.png" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-09.png" alt="Finished short-form clip cover design" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Final Clip Cover</span></span>
+        </a>
+        <a class="portfolio-card" data-cat="design" href="assets/images/portfolio-10.jpg" target="_blank" rel="noopener">
+          <img src="assets/images/portfolio-10.jpg" alt="Short-form thumbnail design sample, Reel cover 5" loading="lazy">
+          <span class="overlay"><span class="tag">Thumbnail Design</span><span class="title">Reel Cover 05</span></span>
+        </a>
+
+        <!-- Real playable video cards, with a real frame from each video as
+             the poster. Nothing downloads until the visitor presses play
+             (preload="none"); these are large raw exports. -->
+        <div class="portfolio-card link-card" data-cat="video" data-video="assets/videos/short-form-01.mp4" role="button" tabindex="0" aria-label="Play Short-Form Edit 01">
+          <img src="assets/images/poster-short-form-01.png" alt="" loading="lazy">
+          <span class="overlay"><span class="icon-play"><svg><use href="#i-play"/></svg></span></span>
+        </div>
+        <div class="portfolio-card link-card" data-cat="video" data-video="assets/videos/short-form-02.mp4" role="button" tabindex="0" aria-label="Play Short-Form Edit 02">
+          <img src="assets/images/poster-short-form-02.png" alt="" loading="lazy">
+          <span class="overlay"><span class="icon-play"><svg><use href="#i-play"/></svg></span></span>
+        </div>
+        <div class="portfolio-card link-card" data-cat="video" data-video="assets/videos/short-form-03.mp4" role="button" tabindex="0" aria-label="Play Short-Form Edit 03">
+          <img src="assets/images/poster-short-form-03.png" alt="" loading="lazy">
+          <span class="overlay"><span class="icon-play"><svg><use href="#i-play"/></svg></span></span>
+        </div>
+        <div class="portfolio-card link-card" data-cat="video" data-video="assets/videos/short-form-04.mp4" role="button" tabindex="0" aria-label="Play Short-Form Edit 04">
+          <img src="assets/images/poster-short-form-04.png" alt="" loading="lazy">
+          <span class="overlay"><span class="icon-play"><svg><use href="#i-play"/></svg></span></span>
+        </div>
+        <div class="portfolio-card link-card" data-cat="vsl" data-video="assets/videos/vsl-july.mp4" role="button" tabindex="0" aria-label="Play VSL (July)">
+          <img src="assets/images/poster-vsl-july.jpg" alt="" loading="lazy">
+          <span class="overlay"><span class="icon-play"><svg><use href="#i-play"/></svg></span></span>
+        </div>
+      </div>
+
+      <div id="testimonials" class="section-head testimonials-head" data-reveal>
+        <span class="eyebrow"><span class="dot"></span>Testimonials</span>
+        <h2>What my client says</h2>
+      </div>
+
+      <div class="testimonial-strip" data-reveal data-video="assets/videos/client-testimonial.mp4" role="button" tabindex="0" aria-label="Play client testimonial">
+        <span class="t-thumb">
+          <img src="assets/images/poster-client-testimonial.png" alt="">
+          <span class="icon-play"><svg><use href="#i-play"/></svg></span>
+        </span>
+        <div class="t-copy">
+          <h4>Andrew, Fitness Coach</h4>
+          <p>A short testimonial from Andrew on working together.</p>
+        </div>
+        <span class="btn btn-ghost" aria-hidden="true">Play <svg><use href="#i-play"/></svg></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="dot"></span>Contact</span>
+        <h2>Let's build something</h2>
+        <p>Tell me what you're working on. I'll get back to you within a day or two.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form id="contactForm" data-reveal
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST">
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="interest">Interested in</label>
+            <select id="interest" name="interest">
+              <option value="Marketing">Marketing (Inbound &amp; Outbound)</option>
+              <option value="Systems & Automation">Systems &amp; Automation</option>
+              <option value="Both">Both</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="What are you working on?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <p class="hint">This form needs a Formspree endpoint to actually deliver (see README.md). Until then, use the direct links.</p>
+        </form>
+
+        <aside class="contact-side" data-reveal>
+          <h3>Direct links</h3>
+          <a class="contact-link" href="mailto:frederickluisorcine@gmail.com">
+            <span class="icon"><svg><use href="#i-mail"/></svg></span>
+            <span class="meta"><span class="label">Email</span><br><span class="value">frederickluisorcine@gmail.com</span></span>
+          </a>
+          <a class="contact-link" href="https://www.tiktok.com/@fredrickluiss" target="_blank" rel="noopener">
+            <span class="icon"><svg><use href="#i-music"/></svg></span>
+            <span class="meta"><span class="label">TikTok</span><br><span class="value">@fredrickluiss</span></span>
+          </a>
+          <a class="contact-link" href="https://www.instagram.com/frederickluisorcine/" target="_blank" rel="noopener">
+            <span class="icon"><svg><use href="#i-instagram"/></svg></span>
+            <span class="meta"><span class="label">Instagram</span><br><span class="value">@frederickluisorcine</span></span>
+          </a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="dot"></span>Q&amp;A</span>
+        <h2>Questions, answered</h2>
+      </div>
+
+      <div class="faq-list" data-reveal>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What platforms do you edit for?</span>
+            <span class="chev"><svg><use href="#i-chevron"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>TikTok, Instagram Reels, and YouTube Shorts, plus long-form VSLs and the graphic side (thumbnails, carousels) for each.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you offer bundled retainers?</span>
+            <span class="chev"><svg><use href="#i-chevron"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Yes, my main offer bundles short-form video editing with graphic design as one retainer, so your content and visuals stay consistent without juggling multiple freelancers.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What does "Systems &amp; Automation" actually mean?</span>
+            <span class="chev"><svg><use href="#i-chevron"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>It's the behind-the-scenes build: agentic workflows and documented processes that make your content and outreach repeatable instead of depending on you doing everything manually every time.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What's the typical turnaround?</span>
+            <span class="chev"><svg><use href="#i-chevron"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>It depends on the scope of the retainer or project. We'll agree on a clear timeline together before any work starts.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do we get started?</span>
+            <span class="chev"><svg><use href="#i-chevron"/></svg></span>
+          </button>
+          <div class="faq-answer"><p>Reach out through the contact form or DM me directly, tell me what you're working on, and we'll figure out the right starting point together.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span class="footer-note">© 2026 Frederick. Built with intention.</span>
+    <div class="footer-links">
+      <a href="mailto:frederickluisorcine@gmail.com">Email</a>
+      <a href="https://www.tiktok.com/@fredrickluiss" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.instagram.com/frederickluisorcine/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#home">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
