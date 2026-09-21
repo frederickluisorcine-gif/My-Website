@@ -1,4 +1,4 @@
-# Frederick — Digital Marketer Portfolio
+# Hebron Creatives — Digital Marketer Portfolio
 
 Static site. No build step, no framework — just `index.html`, `css/`, `js/`, `assets/`.
 
