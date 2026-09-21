@@ -458,6 +458,7 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
   display: block;
   background: #000;
   object-fit: contain;
+  border: 0;
 }
 
 /* Testimonial spotlight */

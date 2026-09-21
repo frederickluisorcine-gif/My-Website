@@ -92,21 +92,39 @@
      These are large raw exports (tens to hundreds of MB), so nothing loads
      until a visitor deliberately presses play — swap the placeholder card
      for a real <video controls> at that point, not before. */
-  document.querySelectorAll("[data-video]").forEach((el) => {
+  /* Cards can use data-video (a local file) or data-youtube (an unlisted
+     YouTube link or 11-character ID) for files too big to host on Vercel. */
+  const youtubeId = (value) => {
+    const match = value.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
+    return match ? match[1] : /^[\w-]{11}$/.test(value) ? value : null;
+  };
+
+  document.querySelectorAll("[data-video], [data-youtube]").forEach((el) => {
     const activate = () => {
       if (el.dataset.activated) return;
-      el.dataset.activated = "true";
 
-      const video = document.createElement("video");
-      video.src = el.dataset.video;
-      video.controls = true;
-      video.autoplay = true;
-      video.playsInline = true;
-      video.preload = "none";
-      video.className = "inline-video";
+      let player;
+      if (el.dataset.youtube) {
+        const id = youtubeId(el.dataset.youtube);
+        if (!id) return;
+        player = document.createElement("iframe");
+        player.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1`;
+        player.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        player.allowFullscreen = true;
+        player.title = el.getAttribute("aria-label") || "Video";
+      } else {
+        player = document.createElement("video");
+        player.src = el.dataset.video;
+        player.controls = true;
+        player.autoplay = true;
+        player.playsInline = true;
+        player.preload = "none";
+      }
+      el.dataset.activated = "true";
+      player.className = "inline-video";
 
       el.innerHTML = "";
-      el.appendChild(video);
+      el.appendChild(player);
       el.classList.add("is-video-active");
       el.removeAttribute("role");
       el.removeAttribute("tabindex");

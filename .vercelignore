@@ -1,0 +1,6 @@
+# Raw video exports too large for a smooth deploy — kept local only.
+# (short-form-01.mp4 and short-form-03.mp4 are under 100MB and are included.)
+assets/videos/client-testimonial.mp4
+assets/videos/short-form-02.mp4
+assets/videos/short-form-04.mp4
+assets/videos/vsl-july.mp4
