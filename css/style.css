@@ -599,6 +599,9 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
 .contact-link .meta .label { font-size: 0.78rem; color: var(--text-muted); }
 .contact-link .meta .value { font-weight: 500; }
 
+/* Form hidden: one centred column with the booking button and direct links */
+.contact-grid.solo { grid-template-columns: minmax(0, 520px); justify-content: start; }
+.contact-side .btn-block { margin-bottom: var(--space-3); }
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
 
 /* ============ FAQ ============ */

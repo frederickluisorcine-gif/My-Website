@@ -330,10 +330,13 @@
       <div class="section-head" data-reveal>
         <span class="eyebrow"><span class="dot"></span>Contact</span>
         <h2>Let's build something</h2>
-        <p>Tell me what you're working on. I'll get back to you within a day or two.</p>
+        <p>Book a call to talk it through, or reach out directly. I'll get back to you within a day or two.</p>
       </div>
 
-      <div class="contact-grid">
+      <div class="contact-grid solo">
+        <!-- CONTACT FORM (hidden for now). To bring it back: create a Formspree form, put its ID in the
+             action URL below, remove the hint line, delete these comment markers, and drop the
+             "solo" class from .contact-grid.
         <form id="contactForm" data-reveal
               action="https://formspree.io/f/YOUR_FORM_ID"
               method="POST">
@@ -361,9 +364,11 @@
           <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
           <p class="hint">This form needs a Formspree endpoint to actually deliver (see README.md). Until then, use the direct links.</p>
         </form>
+        -->
 
         <aside class="contact-side" data-reveal>
-          <h3>Direct links</h3>
+          <a href="https://tidycal.com/frederickluisorcine/60-minute-meeting" target="_blank" rel="noopener" class="btn btn-primary btn-block">Book a Call <svg><use href="#i-arrow"/></svg></a>
+          <h3>Or reach out directly</h3>
           <a class="contact-link" href="mailto:frederickluisorcine@gmail.com">
             <span class="icon"><svg><use href="#i-mail"/></svg></span>
             <span class="meta"><span class="label">Email</span><br><span class="value">frederickluisorcine@gmail.com</span></span>
@@ -423,7 +428,7 @@
             <span>How do we get started?</span>
             <span class="chev"><svg><use href="#i-chevron"/></svg></span>
           </button>
-          <div class="faq-answer"><p>Reach out through the contact form or DM me directly, tell me what you're working on, and we'll figure out the right starting point together.</p></div>
+          <div class="faq-answer"><p>Book a call, email me, or DM me on Instagram or TikTok, tell me what you're working on, and we'll figure out the right starting point together.</p></div>
         </div>
       </div>
     </div>
