@@ -253,7 +253,12 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
 }
 
 @media (max-width: 640px) {
-  .stat-row { grid-template-columns: 1fr; }
+  /* Three compact stats side by side (like tablet) instead of a tall stack */
+  .stat-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .stat-pill { padding: 14px 6px; }
+  .stat-pill .stat-num,
+  .stat-pill .stat-num-static { font-size: 1.25rem; font-family: var(--font-heading); font-weight: 700; }
+  .stat-pill .stat-label { font-size: 0.72rem; line-height: 1.3; }
   .btn { min-height: 44px; padding: 0 22px; font-size: 0.95rem; }
   .hero { padding-top: var(--space-6); }
 }
@@ -296,6 +301,9 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
   .about-grid { grid-template-columns: 1fr; }
   .about-photo-wrap { max-width: 320px; margin-inline: auto; }
   .fact-strip { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .about-photo-wrap { max-width: 240px; }
 }
 
 /* ============ Bento (Services) ============ */
@@ -376,9 +384,17 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
   .bento-card.span-2 { grid-column: span 1; }
 }
 @media (max-width: 560px) {
-  .bento-grid { grid-template-columns: 1fr; }
-  /* Guaranteed single-column stack — no span class should survive here. */
-  .bento-card { grid-column: span 1 !important; }
+  /* Keep the two-column tablet layout on phones, just tighter: pillars and
+     span-4 tiles stay full width, span-2 tiles sit side by side. */
+  .bento-grid { gap: 10px; grid-auto-rows: auto; }
+  .bento-card { padding: var(--space-2); gap: 6px; justify-content: flex-start; }
+  .bento-card .icon { width: 36px; height: 36px; margin-bottom: 4px; }
+  .bento-card .icon svg { width: 18px; height: 18px; }
+  .bento-card h3 { font-size: 1rem; }
+  .bento-card p { font-size: 0.82rem; line-height: 1.45; }
+  .bento-card.pillar { min-height: 0; gap: var(--space-1); }
+  .bento-card.pillar h3 { font-size: 1.35rem; }
+  .bento-card.pillar p { font-size: 0.9rem; }
 }
 
 /* ============ Portfolio ============ */
@@ -463,7 +479,14 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
 .portfolio-card.hidden { display: none; }
 
 @media (max-width: 860px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 520px) { .portfolio-grid { grid-template-columns: 1fr; } }
+@media (max-width: 520px) {
+  /* Two columns on phones too (one giant card per row made the grid ~6,500px
+     tall). A card that starts playing a video spans the full width. */
+  .portfolio-grid { gap: 10px; }
+  .portfolio-card { border-radius: 12px; }
+  .portfolio-card .overlay { padding: var(--space-2); }
+  .portfolio-card.is-video-active { grid-column: 1 / -1; }
+}
 
 /* Click-to-play video (see js/main.js [data-video] handler) */
 .inline-video {
