@@ -228,6 +228,34 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
   margin-bottom: var(--space-6);
 }
 
+/* Proof pills directly under the headline */
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 12px;
+  margin: 0 auto var(--space-3);
+}
+.hero-proof li {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  text-align: left;
+}
+.hero-proof li::before {
+  content: "";
+  flex: none;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--systems-2);
+  box-shadow: 0 0 8px var(--systems-2);
+}
+
 .stat-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -306,95 +334,85 @@ section[id], [id="testimonials"] { scroll-margin-top: var(--nav-height); }
   .about-photo-wrap { max-width: 240px; }
 }
 
-/* ============ Bento (Services) ============ */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(180px, auto);
-  gap: var(--space-2);
-}
-.bento-card {
+/* ============ Services: one main offer + add-ons ============ */
+.offer-card {
   position: relative;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  padding: var(--space-4);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  gap: var(--space-2);
   overflow: hidden;
-  transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-fast), box-shadow var(--dur-fast);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: var(--space-5);
+  align-items: center;
+  padding: var(--space-5);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
 }
-.bento-card:hover { transform: scale(1.02); box-shadow: var(--shadow-lift); }
-.bento-card:hover { border-color: var(--border-strong); }
-
-.bento-card .icon {
-  width: 44px; height: 44px;
-  border-radius: var(--radius-sm);
-  display: inline-flex; align-items: center; justify-content: center;
-  margin-bottom: var(--space-1);
-}
-.bento-card .icon svg { width: 22px; height: 22px; }
-.bento-card h3 { font-size: var(--fs-h3); }
-.bento-card p { color: var(--text-muted); font-size: 0.92rem; }
-
-.bento-card.pillar {
-  grid-column: span 4;
-  min-height: 200px;
-  justify-content: flex-start;
-  gap: var(--space-3);
-}
-.bento-card.pillar .pillar-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.06em; }
-.bento-card.pillar h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); }
-.bento-card.pillar p { font-size: 1rem; max-width: 460px; }
-
-.bento-card.marketing.pillar::after,
-.bento-card.marketing:hover .icon { background: var(--marketing-gradient); color: #05070d; }
-.bento-card.systems.pillar::after,
-.bento-card.systems:hover .icon { background: var(--systems-gradient); color: #05070d; }
-
-.bento-card.pillar::before {
+.offer-card::before {
   content: "";
   position: absolute; inset: 0;
-  opacity: 0.16;
-  z-index: 0;
+  background: var(--systems-gradient);
+  opacity: 0.12;
+  pointer-events: none;
 }
-.bento-card.marketing.pillar::before { background: var(--systems-gradient); }
-.bento-card.systems.pillar::before { background: var(--systems-gradient); }
-.bento-card.pillar > * { position: relative; z-index: 1; }
+.offer-card > * { position: relative; }
+.offer-label {
+  display: inline-block;
+  margin-bottom: var(--space-2);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.offer-main h3 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: var(--space-2); }
+.offer-main p { color: var(--text-muted); font-size: 1.05rem; max-width: 520px; margin-bottom: var(--space-4); }
+.offer-list { display: grid; gap: 14px; }
+.offer-list li { display: flex; align-items: flex-start; gap: 12px; }
+.offer-list li::before {
+  content: "";
+  flex: none;
+  width: 8px; height: 8px; margin-top: 0.55em;
+  border-radius: 50%;
+  background: var(--systems-gradient);
+}
 
-.bento-card.sub .icon { background: var(--surface-2); color: var(--text); }
-.bento-card.sub:hover.marketing-tile .icon { background: var(--marketing-gradient); color: #05070d; }
-.bento-card.sub:hover.systems-tile .icon { background: var(--systems-gradient); color: #05070d; }
+.addons { margin-top: var(--space-6); }
+.addons-title { font-size: var(--fs-h3); }
+.addons-sub { color: var(--text-muted); font-size: 0.95rem; margin: 4px 0 var(--space-3); }
+.addon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+.addon-card {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  transition: transform var(--dur-med) var(--ease-out), border-color var(--dur-fast);
+}
+.addon-card:hover { border-color: var(--border-strong); }
+.addon-card .icon {
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+}
+.addon-card .icon svg { width: 18px; height: 18px; }
+.addon-card h4 { font-size: 1rem; margin-bottom: 4px; }
+.addon-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; }
 
-/* Span is controlled ONLY by these two utility classes (applied in the
-   HTML), kept at a single consistent specificity (.bento-card + one class)
-   throughout — including the responsive overrides below — so later rules
-   always win purely by source order instead of fighting other selectors
-   for specificity (that mismatch is what caused span-4 tiles to render at
-   half width, and inline styles to survive past their breakpoint). */
-.bento-card.span-2 { grid-column: span 2; }
-.bento-card.span-4 { grid-column: span 4; }
-
-@media (max-width: 960px) {
-  .bento-grid { grid-template-columns: repeat(2, 1fr); }
-  .bento-card.pillar,
-  .bento-card.span-4 { grid-column: span 2; }
-  .bento-card.span-2 { grid-column: span 1; }
+@media (max-width: 860px) {
+  .offer-card { grid-template-columns: 1fr; gap: var(--space-4); }
+  .addon-grid { grid-template-columns: 1fr; }
+  /* icon on the left, text on the right keeps the add-ons compact on phones */
+  .addon-card { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; align-items: start; }
+  .addon-card .icon { grid-row: span 2; margin-bottom: 0; }
 }
 @media (max-width: 560px) {
-  /* Keep the two-column tablet layout on phones, just tighter: pillars and
-     span-4 tiles stay full width, span-2 tiles sit side by side. */
-  .bento-grid { gap: 10px; grid-auto-rows: auto; }
-  .bento-card { padding: var(--space-2); gap: 6px; justify-content: flex-start; }
-  .bento-card .icon { width: 36px; height: 36px; margin-bottom: 4px; }
-  .bento-card .icon svg { width: 18px; height: 18px; }
-  .bento-card h3 { font-size: 1rem; }
-  .bento-card p { font-size: 0.82rem; line-height: 1.45; }
-  .bento-card.pillar { min-height: 0; gap: var(--space-1); }
-  .bento-card.pillar h3 { font-size: 1.35rem; }
-  .bento-card.pillar p { font-size: 0.9rem; }
+  .offer-card { padding: var(--space-3); }
+  .offer-main h3 { font-size: 1.35rem; }
+  .offer-main p { font-size: 0.95rem; }
 }
 
 /* ============ Portfolio ============ */

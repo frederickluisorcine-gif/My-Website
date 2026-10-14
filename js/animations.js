@@ -40,31 +40,24 @@
     window.addEventListener("load", () => ScrollTrigger.refresh());
   }
 
-  /* ---------- Stat count-up ----------
-     The real number is guaranteed via an unconditional fallback timer,
-     independent of whether GSAP/ScrollTrigger ever fires — covers font
-     reflow retiming, a backgrounded tab throttling rAF mid-tween, or any
-     other reason the animated path stalls, so a visitor is never stuck
-     looking at "0" or a wrong partial count. */
+  /* ---------- Stat count-up (progressive enhancement) ----------
+     The real numbers are written in the HTML, so they show with no script,
+     no GSAP, or reduced motion. This only replays a count-up from 0 when
+     GSAP is available, and an unconditional timer restores the exact HTML
+     text if the tween stalls (backgrounded tab, font reflow, etc.). */
   document.querySelectorAll(".stat-num").forEach((el) => {
+    const finalText = el.textContent.trim();
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || "";
     const decimals = target % 1 === 0 ? 0 : 1;
-    const finalText = `${target.toFixed(decimals)}${suffix}`;
-    let settled = false;
+    if (reduced || !hasGSAP || Number.isNaN(target)) return;
 
+    let settled = false;
     const settle = () => {
       if (settled) return;
       settled = true;
       el.textContent = finalText;
     };
-
-    setTimeout(settle, 2500);
-
-    if (reduced || !hasGSAP) {
-      settle();
-      return;
-    }
 
     const counter = { val: 0 };
     ScrollTrigger.create({
@@ -72,6 +65,9 @@
       start: "top 95%",
       once: true,
       onEnter: () => {
+        // Safety net starts with the count, not at page load, so a stat row
+        // below the fold still animates when it is scrolled into view.
+        setTimeout(settle, 2500);
         gsap.to(counter, {
           val: target,
           duration: 1.4,
@@ -85,9 +81,9 @@
     });
   });
 
-  /* ---------- Bento card tilt-lite on hover (desktop only, subtle) ---------- */
+  /* ---------- Add-on card tilt-lite on hover (desktop only, subtle) ---------- */
   if (!reduced && window.matchMedia("(hover: hover)").matches) {
-    document.querySelectorAll(".bento-card").forEach((card) => {
+    document.querySelectorAll(".addon-card").forEach((card) => {
       card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
